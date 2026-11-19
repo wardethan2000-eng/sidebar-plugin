@@ -75,7 +75,9 @@ How to keep each section:
   and note that in the Change log. If `deadlines.md` exists, it is the full
   list: keep this section as its summary and never contradict it.
 - **Files:** one row per work file in `claims/`, `motions/`, `briefs/`,
-  `research/`, `rechecks/` and any other folder of work files. The status is
+  `rechecks/` and any other folder of work files. `research/` gets one row
+  only, for `research/index.md`, with its counts and last run; the research
+  index lists the memos. The status is
   one line on what the file concludes or where it stands, e.g. "3 claims
   strong; nearest last day 2027-03-02" or "draft 2: 2 must-fix items open".
   Updated is the file's `last_run`. Add a row for any work file you see that
@@ -95,12 +97,12 @@ updated: <YYYY-MM-DD>
 ---
 # Facts: <short name>
 
-Status: alleged | admitted | disputed | proven | assumed (defined below).
+Status: alleged | admitted | disputed | proven | assumed | disproved | withdrawn (defined below).
 Cite a fact in a work file as its id with its source: F-012 (Compl. ¶ 12).
 
-| ID | Fact | Source | Learned | Status | Notes |
-|---|---|---|---|---|---|
-| F-001 | <one fact, with its own date if it has one> | <document and ¶, page or page:line> | <YYYY-MM-DD> | alleged | |
+| ID | Fact | Source | Learned | Updated | Status | Notes |
+|---|---|---|---|---|---|---|
+| F-001 | <one fact, with its own date if it has one> | <document and ¶, page or page:line> | <YYYY-MM-DD> | <YYYY-MM-DD> | alleged | |
 
 ## Change log
 - <YYYY-MM-DD> — <skill name, or "user">: <ids added or changed, and from what source>
@@ -116,20 +118,26 @@ Statuses:
   declaration), or found by the court.
 - **assumed:** taken as true for the analysis without a source. It must be
   confirmed; list it among the open questions.
+- **disproved:** shown to be false by evidence or a ruling. Everything resting
+  on it must be re-checked.
+- **withdrawn:** the user or the client takes it back, or it was entered in
+  error. Same as disproved for the files that rest on it.
 
 How to keep the ledger:
 - **One fact per row:** one act, statement, date or amount. Put the fact's own
   date in the fact ("On 2025-03-04, Seller delivered the home"). **Learned** is
-  the date the fact entered the ledger.
+  the date the fact entered the ledger. **Updated** is the date its text,
+  source or status last changed (the same as Learned until then). Other skills
+  compare it with their own run dates to spot facts that changed since.
 - **Source:** the document and its ¶, page, or page:line, e.g. `Compl. ¶ 12`,
   `Doe Dep. 45:3–12`, `Ex. 4 (purchase agreement) at 2`. For what the user
   tells you: `user, chat YYYY-MM-DD`. Give only a source you read in this run.
 - **Ids:** the next free number, F-001, F-002 and on. Never reuse, renumber or
   delete one: other files cite them. A fact that turns out to be wrong stays,
-  struck through (`~~...~~`), with the reason in Notes.
+  with status **disproved** or **withdrawn** and the reason in Notes.
 - **Before adding a fact, look for it.** If it is already there, add the new
   source to its row, or change its status, instead of adding a new id.
-- **Status changes:** change Status and record the old status in Notes:
+- **Status changes:** change Status, set Updated, and record the old status in Notes:
   "was alleged; admitted 2026-12-01 (Answer ¶ 12)".
 - **What to add:** the facts the analysis relies on, not every sentence of
   every document.

@@ -1,0 +1,12 @@
+{
+  "name": "sidebar",
+  "description": "Sidebar: case-law research and litigation skills for Claude.",
+  "owner": { "name": "Ethan Ward" },
+  "plugins": [
+    {
+      "name": "sidebar",
+      "source": "./plugins/sidebar",
+      "description": "Case-law research on the Sidebar connector, plus potential-claims, motion to dismiss, summary judgment and brief-teardown skills."
+    }
+  ]
+}

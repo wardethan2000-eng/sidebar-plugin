@@ -6,7 +6,7 @@
     {
       "name": "sidebar",
       "source": "./plugins/sidebar",
-      "description": "Case-law research on the Sidebar connector, plus potential-claims, motion to dismiss, summary judgment, brief-teardown, prefiling-check and recheck-matter skills that share a matter hub and fact ledger."
+      "description": "Case-law research on the Sidebar connector, plus potential-claims, motion to dismiss, summary judgment, brief-teardown, prefiling-check, recheck-matter, open-research and apply-new-facts skills that share a matter hub and fact ledger."
     }
   ]
 }

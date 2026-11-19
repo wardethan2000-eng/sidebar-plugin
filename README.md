@@ -2,8 +2,9 @@
 
 This repository is a Claude plugin marketplace with one plugin, **Sidebar**: the Sidebar case-law
 connector plus skills for litigation work (potential claims, motion to dismiss, summary judgment,
-checking the other side's brief, a pre-filing check of our own draft, and an on-demand recheck of
-the matter's authorities). See [plugins/sidebar/README.md](plugins/sidebar/README.md).
+checking the other side's brief, a pre-filing check of our own draft, an on-demand recheck of
+the matter's authorities, open-ended research kept as a compounding folder of memos, and applying
+new facts to that research). See [plugins/sidebar/README.md](plugins/sidebar/README.md).
 
 ## Install in Claude
 

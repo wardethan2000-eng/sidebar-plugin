@@ -26,9 +26,11 @@ research to apply it to, and stop.
 
 - **New fact:** add it to `facts.md` in that file's own format, with the next
   F-id, its source, the date learned, and its status (alleged, admitted,
-  disputed, proven or assumed).
-- **Changed fact:** keep its id. Update the text or status, and note old →
-  new with the date.
+  disputed, proven, assumed, disproved or withdrawn). Formats:
+  `references/matter-files.md`.
+- **Changed fact:** keep its id. Update the text or status, set its Updated
+  date, and note old → new with the date. A fact shown false becomes
+  **disproved**; one taken back becomes **withdrawn**. Never delete it.
 
 Ask only if the source or status is unclear. A fact the user states without a
 source is "alleged", with the source "user, <date>".

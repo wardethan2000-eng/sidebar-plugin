@@ -1,7 +1,7 @@
 {
   "name": "sidebar",
   "displayName": "Sidebar",
-  "version": "0.2.2",
-  "description": "Case-law research and litigation work on the Sidebar connector: potential-claims, motion to dismiss and summary judgment analyses kept as files in the Claude Project, and a check of the other side's brief, all grounded in Sidebar's case-law tools.",
+  "version": "0.3.0",
+  "description": "Case-law research and litigation work on the Sidebar connector: potential-claims, motion to dismiss and summary judgment analyses kept as files in the Claude Project, a check of the other side's brief, a pre-filing check of our own draft, and an on-demand recheck of every authority in the matter. The skills share a matter hub (matter.md) and a fact ledger (facts.md), and all of it is grounded in Sidebar's case-law tools.",
   "author": { "name": "Ethan Ward" }
 }

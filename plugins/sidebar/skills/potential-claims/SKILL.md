@@ -13,6 +13,11 @@ misses.
 
 ## 1. Find the file
 
+First read `matter.md` and `facts.md` at the Project root, if they exist. They
+hold the parties, our side, the deadlines, the other work files, and the facts
+so far, each with an id (F-001 and on). Formats and rules:
+`references/matter-files.md`.
+
 List the Project's files and look in `claims/` for this matter: front matter
 `skill: potential-claims` with the same parties. The name is
 `claims/potential-claims-<short-matter>.md`.
@@ -23,7 +28,7 @@ List the Project's files and look in `claims/` for this matter: front matter
 ## 2. Ask once, before any analysis
 
 Read every document in the Project first. Then ask, in one message, only what
-you can't find there or in the file:
+you can't find there, in the file, or in `matter.md` and `facts.md`:
 - **Side:** are we the claimant, or the party facing the claims?
 - **Parties:** each one, with its role (individual, business, insurer,
   government body).
@@ -40,6 +45,8 @@ you can't find there or in the file:
 - **Documents:** name each one the facts point to that you didn't find (the
   contract, warranty, closing papers, correspondence, invoices, photos).
 - **For an update:** only what is new since `last_run`.
+- **Matter files:** if `matter.md` or `facts.md` doesn't exist yet, anything
+  its template needs that you can't find.
 
 If the user wants to go on without something, list it under `missing` and treat
 what depends on it as unknown.
@@ -71,7 +78,9 @@ what depends on it as unknown.
 
 For each claim, record:
 - **Elements:** the facts that meet each one, cited to the document read (file
-  and ¶, page or line), or "unknown: not read". Then list the facts still needed.
+  and ¶, page or line), or "unknown: not read". Cite a fact in `facts.md` by its
+  id and source, e.g. `F-004 (Purchase Agmt. at 2)`. Then list the facts still
+  needed.
 - **Limitations:** the statute section, the accrual date and why, the period,
   and the **last day to file** from `compute_deadline` (accrual date, period in
   years or months, the forum's court), with its safe date if it gives one.
@@ -160,7 +169,16 @@ Elements per <case, pin>:
    Note the result under "Citation check".
 2. Save the file with the Projects tool at its path. When updating, overwrite
    the same file.
-3. In the chat, give:
+3. Update the matter files, creating either one from its template in
+   `references/matter-files.md` if it doesn't exist. Re-read each just before
+   saving it.
+   - `facts.md`: add each new fact the analysis relies on, with the next free
+     id, its source, today's date and its status. Update the status of any
+     fact this run moved.
+   - `matter.md`: this file's row in Files (one-line status, today's date); the
+     nearest last days to file in Deadlines; a dated line at the top of the
+     Change log.
+4. In the chat, give:
    - the claims, ranked;
    - the nearest deadlines;
    - what changed since the last run;

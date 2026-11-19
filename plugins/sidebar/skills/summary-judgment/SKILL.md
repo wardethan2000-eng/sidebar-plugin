@@ -13,6 +13,11 @@ You already know Rule 56 and K.S.A. 60-256. This skill adds:
 
 ## 1. Find the file
 
+First read `matter.md` and `facts.md` at the Project root, if they exist. They
+hold the court, judge, parties, our side, the deadlines, the other work files,
+and the facts so far, each with an id (F-001 and on) and a status. Formats and
+rules: `references/matter-files.md`.
+
 List the Project's files and look in `motions/` for front matter
 `skill: summary-judgment` with the same case. Names follow
 `motions/sj-<short-case-name>.md` (moving or assessing) or `motions/sj-response-<short-case-name>.md`
@@ -23,7 +28,8 @@ List the Project's files and look in `motions/` for front matter
 
 ## 2. Ask once, before any analysis
 
-Ask, in one message, only what you can't find in the Project or the file:
+Ask, in one message, only what you can't find in the Project, the file, or
+`matter.md` and `facts.md`:
 - The court and judge. Which side we're on. Which claims and defenses are at issue.
 - The dispositive-motion deadline from the scheduling order, and whether discovery
   is closed.
@@ -41,6 +47,8 @@ Ask, in one message, only what you can't find in the Project or the file:
   memory, for the format of the facts statement.
 - For an update: only what is new since `last_run` (new transcripts, new
   productions, rulings, an amended pleading).
+- If `matter.md` or `facts.md` doesn't exist yet: anything its template needs
+  that you can't find.
 
 If the user wants to proceed without a document, mark it **missing** and treat
 the facts that depend on it as unknown.
@@ -69,7 +77,9 @@ For each claim, and each element of it:
   **missing**, or **unknown**.
 
 Cite only transcript pages and exhibits you read in this run. Anything else is
-"unknown: not read", never a guess at a page.
+"unknown: not read", never a guess at a page. In this file, tag evidence with
+its `facts.md` id where there is one: `F-012 (Doe Dep. 45:3–12)`. Never put
+F-ids in the facts statement or the response: those are for filing.
 
 Then give the overall read:
 - **Can we move:** every element of the claim or defense solid, with no genuine dispute.
@@ -143,7 +153,18 @@ missing: [<documents asked for and not provided>]
 1. Run `check_citations` on the file (case citations; it doesn't check record cites).
    Fix what it flags.
 2. Save with the Projects tool at the file's path, overwriting it on an update.
-3. In the chat, give:
+3. Update the matter files, creating either one from its template in
+   `references/matter-files.md` if it doesn't exist. Re-read each just before
+   saving it.
+   - `facts.md`: add the facts the element ratings rest on, with the next free
+     ids. Move each status the record moved: **admitted** when the other side
+     admits it; **disputed** when the record has evidence against it;
+     **proven** when record evidence you read shows it and nothing you read
+     contradicts it. Say when and why in Notes.
+   - `matter.md`: this file's row in Files (one-line status, today's date); the
+     dispositive-motion deadline in Deadlines; a dated line at the top of the
+     Change log.
+4. In the chat, give:
    - the short answer;
    - what moved since the last run;
    - the deadline, if it is close;

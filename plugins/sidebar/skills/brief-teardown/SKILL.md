@@ -13,6 +13,11 @@ That checking is this skill's job.
 
 ## 1. Find the file
 
+First read `matter.md` and `facts.md` at the Project root, if they exist. They
+hold the court, parties, our side, the deadlines, the other work files, and the
+facts so far, each with an id (F-001 and on) and a status. Formats and rules:
+`references/matter-files.md`.
+
 List the Project's files and look in `briefs/` for front matter
 `skill: brief-teardown` on the same motion. Names follow
 `briefs/teardown-<short-case-name>-<motion>.md`.
@@ -24,11 +29,13 @@ List the Project's files and look in `briefs/` for front matter
 
 ## 2. Ask once
 
-Ask only for what is missing:
+Ask only for what is missing from the Project, `matter.md` and `facts.md`:
 - their brief, as a file or pasted text;
 - the court;
 - what it answers (our motion or brief, if it's in the Project);
-- which arguments matter most to the user, if they have a view.
+- which arguments matter most to the user, if they have a view;
+- if `matter.md` or `facts.md` doesn't exist yet: anything its template needs
+  that you can't find.
 
 ## 3. Check every citation
 
@@ -58,7 +65,7 @@ The key authorities are the 5–12 cases their main arguments rest on. For each 
 4. **Binding or not.** If they cite out-of-forum or unpublished authority as if it
    controls, say so.
 
-## 5. Standards, elements and omissions
+## 5. Standards, elements, omissions and facts
 
 - If their brief states a standard or a claim's elements, compare it with
   `legal_standard` and `claim_elements` for the forum. Flag wording that is
@@ -66,6 +73,9 @@ The key authorities are the 5–12 cases their main arguments rest on. For each 
 - **Omissions:** the authorities those tools rank highest that they don't cite,
   and adverse binding authority they skip. Use `search_cases` on the issue,
   binding courts only.
+- **Their facts against `facts.md`:** list each fact their brief states that
+  conflicts with the ledger, or that it states without a record cite. A fact
+  their brief concedes is an admission: note it, with the brief's page.
 
 ## 6. Write or update the file
 
@@ -97,6 +107,10 @@ last_run: <YYYY-MM-DD>
 - Our response: <one or two sentences>
 
 ## Standards and elements as stated vs. as the courts state them
+## Their facts vs. the record
+| Their statement (brief p.) | Conflicts with / concedes | Fact id and source |
+|---|---|---|
+
 ## What they left out
 ## Authorities we'd add
 | Authority | For | Quote verified | Pin verified | Good law |
@@ -107,5 +121,14 @@ last_run: <YYYY-MM-DD>
 
 1. Run `check_citations` on our file too: every case cited in it must check out.
 2. Save the file with the Projects tool at its path.
-3. In the chat, give the most useful points, the citation problems found, and
+3. Update the matter files, creating either one from its template in
+   `references/matter-files.md` if it doesn't exist. Re-read each just before
+   saving it.
+   - `facts.md`: a fact their brief concedes becomes **admitted** (source: their
+     brief and page); a fact it denies becomes **disputed**. Add a new fact
+     only if this teardown relies on it.
+   - `matter.md`: this file's row in Files (one-line status, today's date); our
+     response deadline in Deadlines, from `compute_deadline`, if the service
+     date is known; a dated line at the top of the Change log.
+4. In the chat, give the most useful points, the citation problems found, and
    anything you could not verify.

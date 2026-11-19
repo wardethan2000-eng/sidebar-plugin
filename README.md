@@ -2,7 +2,8 @@
 
 This repository is a Claude plugin marketplace with one plugin, **Sidebar**: the Sidebar case-law
 connector plus skills for litigation work (potential claims, motion to dismiss, summary judgment,
-and checking the other side's brief). See [plugins/sidebar/README.md](plugins/sidebar/README.md).
+checking the other side's brief, a pre-filing check of our own draft, and an on-demand recheck of
+the matter's authorities). See [plugins/sidebar/README.md](plugins/sidebar/README.md).
 
 ## Install in Claude
 
@@ -17,3 +18,15 @@ In Claude Code: `/plugin install sidebar --marketplace wardethan2000-eng/sidebar
 
 Edit the plugin under `plugins/sidebar/`, bump `version` in `plugins/sidebar/.claude-plugin/plugin.json`,
 and push to `main`.
+
+`references/matter-files.md` is copied into every skill folder. After editing it, copy it to the others and
+check that they match:
+
+```sh
+cd plugins/sidebar/skills
+for d in */; do [ "$d" = potential-claims/ ] || cp potential-claims/references/matter-files.md "$d/references/"; done
+md5sum */references/matter-files.md
+```
+
+The workflows are skills, not commands: in Claude chat a plugin's `commands/` load as skills anyway, with no
+slash command, so skills behave the same everywhere.

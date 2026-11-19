@@ -12,6 +12,11 @@ case taken from Sidebar's tools and checked.
 
 ## 1. Find the file
 
+First read `matter.md` and `facts.md` at the Project root, if they exist. They
+hold the court, judge, parties, our side, the deadlines, the other work files,
+and the facts so far, each with an id (F-001 and on). Formats and rules:
+`references/matter-files.md`.
+
 List the Project's files and look in `motions/` for this motion: front matter
 `skill: motion-to-dismiss` with the same case and motion. Names follow
 `motions/mtd-<short-case-name>.md` (moving) or `motions/mtd-response-<short-case-name>.md` (responding).
@@ -21,7 +26,8 @@ List the Project's files and look in `motions/` for this motion: front matter
 
 ## 2. Ask once, before any analysis
 
-Ask, in one message, only what you can't find in the Project or the file:
+Ask, in one message, only what you can't find in the Project, the file, or
+`matter.md` and `facts.md`:
 - The court (and judge, if assigned). This decides the standard: federal and Kansas
   state courts apply different pleading standards.
 - Which side we're on, and which claims (or which grounds) are at issue.
@@ -31,6 +37,8 @@ Ask, in one message, only what you can't find in the Project or the file:
   - the motion and its memorandum, if we're responding.
 - For an update: only what is new since `last_run` (an amended pleading, a reply,
   a ruling, new facts).
+- If `matter.md` or `facts.md` doesn't exist yet: anything its template needs
+  that you can't find (the case number and posture are usually on the pleadings).
 
 If the user wants to proceed without a document, mark it **missing** in the file
 and treat what depends on it as unknown.
@@ -57,7 +65,8 @@ For each claim, and each element of it, record:
   **missing**, or **unknown**.
 
 Cite a ¶ only if you read that paragraph in this run. Otherwise write
-"unknown: not read".
+"unknown: not read". Where `facts.md` already holds the allegation, add its id:
+`¶ 14 (F-006)`.
 
 Then give the overall read:
 - **Moving:** the strongest grounds, in order.
@@ -128,7 +137,17 @@ missing: [<documents asked for and not provided>]
    Note the result under "Citation check".
 2. Save the file with the Projects tool at its path. When updating, overwrite
    the same file.
-3. In the chat, give:
+3. Update the matter files, creating either one from its template in
+   `references/matter-files.md` if it doesn't exist. Re-read each just before
+   saving it.
+   - `facts.md`: add the alleged facts the analysis turns on (status
+     **alleged**, source the pleading ¶), with the next free ids. Not every
+     paragraph: only those the ratings rest on.
+   - `matter.md`: this file's row in Files (one-line status, today's date); the
+     posture, if it moved; the response or reply deadline in Deadlines, from
+     `compute_deadline`, if the trigger date is known; a dated line at the top
+     of the Change log.
+4. In the chat, give:
    - the short answer;
    - what changed since the last run;
    - open questions, and documents still missing.

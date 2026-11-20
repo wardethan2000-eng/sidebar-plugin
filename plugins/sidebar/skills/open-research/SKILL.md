@@ -1,6 +1,6 @@
 ---
 name: open-research
-description: Open-ended legal research on a matter, kept as a growing set of short memos in the Claude Project's research/ folder that later chats build on. Spots issues in the facts, generates theories across practice areas (claims, defenses, other parties, procedural routes, remedies, fee-shifting), finds analogous cases under other doctrines and in other states, tries to kill each theory against the best adverse authority, researches the survivors one subquestion per memo, and hands back a ranked queue of next rabbit holes. Use when the user asks to dig into a matter or question, explore theories or angles, think creatively about options, find analogies or persuasive authority, write research memos, or continue, review or check on earlier research. Needs the Sidebar connector.
+description: Open-ended legal research on a matter, kept as a growing set of short memos in the Claude Project's research/ folder that later chats build on. Spots issues in the facts, generates theories across practice areas (claims, defenses, other parties, procedural routes, remedies, fee-shifting), finds analogous cases under other doctrines and in other states, tries to kill each theory against the best adverse authority, researches the survivors one subquestion per memo, and hands back a ranked queue of next rabbit holes. By default a run is the scan only, and the user picks which theories get memos. Use when the user asks to dig into a matter or question, explore theories or angles, think creatively about options, find analogies or persuasive authority, write research memos, or continue, review or check on earlier research. Needs the Sidebar connector.
 ---
 
 # Open-ended research
@@ -61,8 +61,10 @@ Ask, in one message, only what you can't find in the files:
 - **Goal:** what the client wants out of this (money, stop the conduct,
   defeat a claim, leverage, a ruling). Generate angles only for that goal.
 - **Side, forum and governing law** (or the candidate forums).
-- **Scope and budget.** The default is the scan plus up to 4 memos. Offer
-  "scan only".
+- **Scope.** The default run is the scan only: it ends with the ranked list,
+  and memos are written only on the items the user picks. If the request
+  already says how deep to go ("and research the top 3", "go deep on the
+  best two"), that is their pick.
 - **Facts and documents the theories will turn on** that `facts.md` lacks,
   especially the contract and its clauses, and the key dates.
 
@@ -73,8 +75,8 @@ unknown, or as assumed facts marked "assumed".
 
 | The user says | This run does |
 |---|---|
-| "dig into X", "find our theories", "research X" | scan (step 4), then memos on the top survivors, up to 4 |
-| "scan only", "what are the angles" | scan, kill tests and the queue; no memos |
+| "dig into X", "find our theories", "research X", "what are the angles" | the scan (step 4), then stop: report the ranked list (step 7) and ask which to research. No memos |
+| "research the top N", "scan and go deep on the best ones" | the scan, then memos on the top N survivors (4 if no number is given) |
 | "go deep on T-003" | up to 4 memos inside that theory's questions |
 | "run 1, 3 and 5" | exactly those queue items |
 | "go, up to N" | N memos, about 4 per chat; then stop and say to continue in a new chat |
@@ -123,7 +125,8 @@ Follow `angles.md`. In short:
    or analogy) and what a court would have to accept.
 
 Save `theories.md`, `dispelled.md` and the index now, before any deep
-research.
+research. If this run is the scan only (the default), go to step 7: the
+ranked list is the queue, and the user picks what gets a memo.
 
 ## 5. Deep research: one subquestion per memo
 
@@ -204,7 +207,8 @@ In the chat, in this order:
    and authority. Put any deadline the research found first of all.
 2. **Each question answered,** in one line, with its confidence.
 3. **What couldn't be verified,** and any Coverage notices.
-4. **Budget used,** and where the run stopped.
+4. **Budget used,** and where the run stopped. After a scan only: how many
+   candidates, how many killed (each with its authority), how many alive.
 5. **The queue:** ranked, each with what turns on it and its size (S, M or L).
    End by asking which to run.
 

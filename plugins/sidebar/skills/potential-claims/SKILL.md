@@ -1,6 +1,6 @@
 ---
 name: potential-claims
-description: Work out which claims a client has, or faces, from the facts. Each claim gets its elements, limitations period and last day to file, remedies, defenses and viability. The analysis is kept as a markdown file in the Claude Project that later runs update as facts come in. Use when the user asks what claims a client has, whether they can sue or be sued, what causes of action the facts support, how long they have to file, or asks to update an existing claims analysis. Needs the Sidebar connector.
+description: Work out which claims a client has, or faces, from the facts. Each claim gets its elements, limitations period and last day to file, remedies, defenses and viability. The analysis is kept as a markdown file in the Claude Project that later runs update as facts come in. Use when the user asks what claims a client has, whether they can sue or be sued, what causes of action the facts support, how long they have to file, or asks to update an existing claims analysis. To dig into a matter or explore theories and angles, use open-research. Needs the Sidebar connector.
 ---
 
 # Potential claims analysis

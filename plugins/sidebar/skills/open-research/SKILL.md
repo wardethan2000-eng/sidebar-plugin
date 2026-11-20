@@ -126,7 +126,10 @@ Follow `angles.md`. In short:
 
 Save `theories.md`, `dispelled.md` and the index now, before any deep
 research. If this run is the scan only (the default), go to step 7: the
-ranked list is the queue, and the user picks what gets a memo.
+ranked list is the queue, and the user picks what gets a memo. Write no
+memo on a scan-only run, not even on the lead theory: a deliverable the
+request mentions (an opinion, a letter, an answer for the client) is not a
+depth request.
 
 ## 5. Deep research: one subquestion per memo
 

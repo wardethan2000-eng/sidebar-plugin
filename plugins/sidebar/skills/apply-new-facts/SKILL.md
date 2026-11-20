@@ -95,7 +95,8 @@ claims, defenses, parties, remedies, fee-shifting, clocks.
 
 ## 6. Check and save
 
-1. Run `check_citations` on every memo you edited, fix what it flags, and
+1. Run `check_citations` on the full text of every memo you edited (not a
+   list of its cites), fix what it flags, and
    update `verification` and `law_checked`. If the connector offers
    `verify_memo`, use it and save what it returns.
 2. Save the edited memos, `theories.md`, `dispelled.md` and the index: its

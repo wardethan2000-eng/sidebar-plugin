@@ -182,8 +182,11 @@ memo. "Nothing found" in a known hole is not "no authority".
 
 ## 6. Check and save each memo before the next
 
-1. Run `check_citations` on the whole memo. Fix what it flags and run it
-   again. Run `check_good_law` on each authority the answer rests on. Record
+1. Run `check_citations` on the whole memo as written: paste its full text,
+   not a list of the cites you meant to use, so quotes added while writing
+   are checked too. Words in quotation marks must be the court's; put a
+   paraphrase, or the other side's argument, without them. Fix what it flags
+   and run it again. Run `check_good_law` on each authority the answer rests on. Record
    both in `verification`, with the date. If the connector offers
    `verify_memo`, run it instead and save what it returns.
 2. Save `research/memos/Q-<nnn>-<slug>.md` with the Projects tool. When

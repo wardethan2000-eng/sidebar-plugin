@@ -72,6 +72,9 @@ the Project, not a summary)
   under K.S.A. 60-1103b, and its filing date.
 
 **For the statement**
+- The user's lien statement form, or a lien they filed before, as a Word file
+  in the Project, if it isn't there already. Say that the draft will be made by
+  editing that file.
 - Who will sign the verification: a person with authority to act for the
   claimant who knows the facts, and their title.
 - The attorney signature block, if the user's form has one and it isn't in the
@@ -206,9 +209,33 @@ padded nor bare. A single lump sum is not enough.
 
 ## 7. Draft the lien statement
 
-Use the user's form if it is in the Project; otherwise
-`references/lien-statement-template.md`. Fill it from the ledger, the deadline
-table and the facts:
+**The form decides the layout, not you.** Look in the Project for the user's
+lien form or a lien they filed before. If there is none, ask for one in step
+2. Only if they have none, use `references/lien-statement-template.md`, line
+for line.
+
+- **Edit the form; don't rebuild it.** Copy the user's Word file and change
+  only the client-specific text inside it: names, addresses, the property and
+  legal description, the amount in words and figures, the dates, the signer.
+  Keep its title, paragraphs, wording, order, spacing, fonts and signature and
+  notary blocks exactly as they are. Never write a new document "in the style
+  of" the form.
+- **Add nothing the form doesn't have.** No court caption, file number,
+  numbered paragraphs, headings, recitals, certificate of service or bracketed
+  notes to the attorney. The only additions allowed are the ones the statute
+  requires for this claimant and the form lacks, written in the form's own
+  voice: for a subcontractor or supplier, the contractor's name and "under an
+  agreement with [contractor]" in place of "under contract with [owner]"; and
+  the Exhibit B sentence and affidavit when a warning statement was required.
+- **The itemization stays in Exhibit A.** The body refers to Exhibit A by name,
+  as the form does. Don't put the itemized table in the body.
+- **The form's layout wins over general formatting instructions** in the
+  Project (numbering, justification), because it is the document the user
+  files. If the Project asks for a font the form doesn't use, ask which wins.
+- Blanks you can't fill: leave the form's own blank (a line), not a bracketed
+  note, and list them in the chat instead.
+
+What has to be in it, checked in step 8:
 - owner(s) of record, exactly as on the deed;
 - the claimant's name and an address sufficient for service of process, in the
   body of the statement (not only on an attached invoice);
@@ -221,10 +248,17 @@ table and the facts:
 - Exhibit A referred to by name;
 - the verification by the person named in step 2, with a notary block;
 - for a subcontractor on a residential improvement, the affidavit that the
-  warning statement was given (60-1103(a)(2)).
+  warning statement was given (60-1103(a)(2)), as Exhibit B.
 
-Produce it as a Word document if the user's form is Word, and say which blanks
-are left for signing and notarizing.
+Exhibit A and Exhibit B follow the form's last page, each starting on a new
+page with the form's exhibit heading style.
+
+**Other documents** (the 60-1103a warning statement, a notice of extension,
+proof of service) are separate files, made only when the user asks. Use the
+user's own form for each if they have one. A warning statement uses the
+statute's wording from `kansas_statute`, word for word, with only its blanks
+filled, and nothing added. A notice of extension follows the judicial council
+form the statute names; ask for it rather than inventing one.
 
 ## 8. Check before filing
 

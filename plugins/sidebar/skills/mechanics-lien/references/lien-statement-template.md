@@ -1,6 +1,6 @@
 # Lien statement template
 
-Use the user's own form when it is in the Project. Otherwise use this one.
+Use the user's own form when it is in the Project, by editing a copy of their file. Otherwise follow this one line for line: same paragraphs, same order, nothing added (no caption, numbering, headings or certificate of service).
 Square brackets are blanks to fill; lines marked **[sub]** are for a
 subcontractor or supplier only, **[GC]** for an original contractor only.
 Keep the amount identical everywhere it appears.

@@ -182,16 +182,21 @@ memo. "Nothing found" in a known hole is not "no authority".
 
 ## 6. Check and save each memo before the next
 
-1. Run `check_citations` on the whole memo as written: paste its full text,
-   not a list of the cites you meant to use, so quotes added while writing
-   are checked too. Words in quotation marks must be the court's; put a
-   paraphrase, or the other side's argument, without them. Fix what it flags
-   and run it again. Run `check_good_law` on each authority the answer rests on. Record
-   both in `verification`, with the date. If the connector offers
-   `verify_memo`, run it instead and save what it returns.
-2. Save `research/memos/Q-<nnn>-<slug>.md` with the Projects tool. When
-   updating a memo, overwrite it, bump `version`, and add a Changes line.
-3. Update the other files:
+1. Run `check_good_law` on each authority the answer rests on, and record it
+   in `verification` with the date. Words in quotation marks must be the
+   court's; put a paraphrase, or the other side's argument, without them.
+2. Write the whole file into `verify_memo`: the full text you would save,
+   never an extract. Fix what it lists as still to fix and run it again.
+   Stop when it says final, or when the only items left are ones you have
+   checked and found fine; name those in the chat.
+3. Save the file `verify_memo` returned, exactly as returned and with its
+   last line, as `research/memos/Q-<nnn>-<slug>.md` with the
+   Projects tool. Don't edit it afterwards: a later edit
+   needs another `verify_memo`. (If the connector has no `verify_memo`, run
+   `check_citations` on the whole file, fix what it flags, and save your file.)
+   When updating a memo, bump `version`, add a Changes line, and send the
+   whole updated memo through `verify_memo` before overwriting it.
+4. Update the other files:
    - `theories.md`: status, confidence (apply the caps in `formats.md`) and a
      history line with its source;
    - `dispelled.md`, if a theory died;
@@ -199,9 +204,12 @@ memo. "Nothing found" in a known hole is not "no authority".
      queue, the run row and `counts`;
    - `log.md`: one line per change, each naming its source.
 
+   Run `check_citations` on the entries you added or changed in `theories.md`
+   and `dispelled.md`: their text as written, not a list of their cites.
+
    A memo whose version changed marks every memo and theory resting on it
    needs-recheck.
-4. If the connector offers `check_research_ledger`, run it on the index and
+5. If the connector offers `check_research_ledger`, run it on the index and
    `facts.md`, and fix what it flags.
 
 Then start the next item.

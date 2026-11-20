@@ -150,9 +150,16 @@ missing: [<documents asked for and not provided>]
 
 ## 6. Check, save, report
 
-1. Run `check_citations` on the file (case citations; it doesn't check record cites).
-   Fix what it flags.
-2. Save with the Projects tool at the file's path, overwriting it on an update.
+1. Write the whole file into `verify_memo`: the full text you would save,
+   never an extract. Fix what it lists as still to fix and run it again.
+   Stop when it says final, or when the only items left are ones you have
+   checked and found fine; name those in the chat. It checks case
+   citations, not record cites.
+2. Save the file `verify_memo` returned, exactly as returned and with its
+   last line, with the Projects tool at its path
+   (on an update, over the same file). Don't edit it afterwards: a later edit
+   needs another `verify_memo`. (If the connector has no `verify_memo`, run
+   `check_citations` on the whole file, fix what it flags, and save your file.)
 3. Update the matter files, creating either one from its template in
    `references/matter-files.md` if it doesn't exist. Re-read each just before
    saving it.

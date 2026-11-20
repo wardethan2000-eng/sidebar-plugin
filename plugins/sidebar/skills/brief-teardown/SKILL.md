@@ -119,8 +119,16 @@ last_run: <YYYY-MM-DD>
 
 ## 7. Check, save, report
 
-1. Run `check_citations` on our file too: every case cited in it must check out.
-2. Save the file with the Projects tool at its path.
+1. Our file must check out too. Write the whole file into `verify_memo`: the full text you would save,
+   never an extract. Fix what it lists as still to fix and run it again.
+   Stop when it says final, or when the only items left are ones you have
+   checked and found fine; name those in the chat. A case it can't find that our
+   file itself reports as missing (their citation) doesn't hold the file
+   back.
+2. Save the file `verify_memo` returned, exactly as returned and with its
+   last line, with the Projects tool at its path. Don't edit it afterwards: a later edit
+   needs another `verify_memo`. (If the connector has no `verify_memo`, run
+   `check_citations` on the whole file, fix what it flags, and save your file.)
 3. Update the matter files, creating either one from its template in
    `references/matter-files.md` if it doesn't exist. Re-read each just before
    saving it.

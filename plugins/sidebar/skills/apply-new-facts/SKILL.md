@@ -95,14 +95,20 @@ claims, defenses, parties, remedies, fee-shifting, clocks.
 
 ## 6. Check and save
 
-1. Run `check_citations` on the full text of every memo you edited (not a
-   list of its cites), fix what it flags, and
-   update `verification` and `law_checked`. If the connector offers
-   `verify_memo`, use it and save what it returns.
-2. Save the edited memos, `theories.md`, `dispelled.md` and the index: its
-   facts table, theory table, queue and `counts`.
-3. Write one line per change in `log.md`, each naming the F-id.
-4. Add a line to `matter.md`'s change log only if the plan changes.
+1. Update `verification` and `law_checked` in every memo you edited.
+2. For each edited memo: write the whole memo into `verify_memo`: the full text you would save,
+   never an extract or just the changed part. Fix what it lists as still to fix and run it again.
+   Stop when it says final, or when the only items left are ones you have
+   checked and found fine; name those in the chat.
+3. Save the file `verify_memo` returned, exactly as returned and with its
+   last line, over the memo with the Projects tool. Don't edit it afterwards: a later edit
+   needs another `verify_memo`. (If the connector has no `verify_memo`, run
+   `check_citations` on the whole file, fix what it flags, and save your file.)
+4. Save `theories.md`, `dispelled.md` and the index: its facts table, theory
+   table, queue and `counts`. Run `check_citations` on the entries you added
+   or changed: their text as written, not a list of their cites.
+5. Write one line per change in `log.md`, each naming the F-id.
+6. Add a line to `matter.md`'s change log only if the plan changes.
 
 ## 7. Report
 

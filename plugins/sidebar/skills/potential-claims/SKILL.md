@@ -160,15 +160,20 @@ Elements per <case, pin>:
 |---|---|---|---|---|
 
 ## Citation check
-<check_citations summary and the date it ran>
+<see the verification line at the end of the file>
 ```
 
 ## 6. Check, save, report
 
-1. Run `check_citations` on the whole file. Fix what it flags and run it again.
-   Note the result under "Citation check".
-2. Save the file with the Projects tool at its path. When updating, overwrite
-   the same file.
+1. Write the whole file into `verify_memo`: the full text you would save,
+   never an extract. Fix what it lists as still to fix and run it again.
+   Stop when it says final, or when the only items left are ones you have
+   checked and found fine; name those in the chat.
+2. Save the file `verify_memo` returned, exactly as returned and with its
+   last line, with the Projects tool at its path
+   (on an update, over the same file). Don't edit it afterwards: a later edit
+   needs another `verify_memo`. (If the connector has no `verify_memo`, run
+   `check_citations` on the whole file, fix what it flags, and save your file.)
 3. Update the matter files, creating either one from its template in
    `references/matter-files.md` if it doesn't exist. Re-read each just before
    saving it.

@@ -135,8 +135,15 @@ daily requests it would use (1 each). Run only what the user approves.
    below. On a later recheck, update it in place: replace "What changed",
    update the tables, keep old offers with their status, and add a dated entry
    at the top of Changes.
-2. Run `check_citations` on it, then save it with the Projects tool.
-3. Update `matter.md` (create it from its template if it doesn't exist).
+2. Write the whole file into `verify_memo`: the full text you would save,
+   never an extract. Fix what it lists as still to fix and run it again.
+   Stop when it says final, or when the only items left are ones you have
+   checked and found fine; name those in the chat.
+3. Save the file `verify_memo` returned, exactly as returned and with its
+   last line, with the Projects tool. Don't edit it afterwards: a later edit
+   needs another `verify_memo`. (If the connector has no `verify_memo`, run
+   `check_citations` on the whole file, fix what it flags, and save your file.)
+4. Update `matter.md` (create it from its template if it doesn't exist).
    Re-read it just before saving.
    - front matter: `last_recheck` = today; `checked_through` = the copy's date;
    - Rechecks: a line such as "2026-12-01 (copy through 2026-09-30; since
@@ -145,16 +152,17 @@ daily requests it would use (1 each). Run only what the user approves.
    - this file's row in Files, and a dated line at the top of the Change log.
 
    A recheck learns no facts: leave `facts.md` as it is.
-4. In the chat, give:
+5. In the chat, give:
    - what changed, grouped as in step 6, each with the files it touches;
    - the offered updates, numbered, each with the file and section and what
      would change, and a question: which should I apply?
    - the CourtListener search offer, if any, with its cost;
    - what was not checked.
-5. **Only after the user says yes**, apply each approved update: edit that
+6. **Only after the user says yes**, apply each approved update: edit that
    section of that file, add a dated entry to its Changes log ("recheck
-   <date>: <what changed>, approved by the user"), re-run `check_citations` on
-   it, and update its row in `matter.md`. Mark the offer applied in the
+   <date>: <what changed>, approved by the user"), send the whole edited file
+   through `verify_memo` and save what it returns, and update its row in
+   `matter.md`. Mark the offer applied in the
    recheck file, or declined if the user said no.
 
 ```markdown
